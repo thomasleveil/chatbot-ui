@@ -23,3 +23,9 @@ jobs:
 
     - name: Run Jest Test Suite
       run: npm test
+    
+    - name: Publish Test Report
+      if: always()
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      with:
+        files: test-results/**/results.xml
